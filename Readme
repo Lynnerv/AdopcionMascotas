@@ -1,0 +1,10 @@
+// instalar el package
+
+ dotnet add package Microsoft.EntityFrameworkCore --version 9.0.4
+ dotnet add package Microsoft.EntityFrameworkCore.Design --version 9.0.4
+ dotnet add package Microsoft.EntityFrameworkCore.Relational --version 9.0.4
+ dotnet add package Microsoft.EntityFrameworkCore.Tools --version 9.0.4
+ dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL --version 9.0.4
+ dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version 9.0.0
+ dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore --version 9.0.3
+ dotnet add package Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore --version 9.0.3
