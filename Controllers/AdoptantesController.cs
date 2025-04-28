@@ -5,6 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using AdopcionMascotas.Data;
+using AdopcionMascotas.Models;
 
 namespace AdopcionMascotas.Controllers
 {
