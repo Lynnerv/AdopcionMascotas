@@ -8,3 +8,10 @@
  dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version 9.0.0
  dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore --version 9.0.3
  dotnet add package Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore --version 9.0.3
+
+
+ //codigo para migracion
+
+ dotnet ef migrations add Inicio
+
+ dotnet ef database update
