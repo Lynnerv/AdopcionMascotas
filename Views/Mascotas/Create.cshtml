@@ -1,0 +1,63 @@
+@model AdopcionMascotas.Models.Mascota
+
+@{
+    ViewData["Title"] = "Registrar nueva Mascota";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4">@ViewData["Title"]</h2>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    @if (!ViewData.ModelState.IsValid && ViewContext.HttpContext.Request.Method == "POST")
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Error:</strong> Por favor, revisa los campos marcados.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <form asp-action="Create" method="post" class="row g-3">
+        <div class="col-md-6">
+            <label asp-for="Nombre" class="form-label"></label>
+            <input asp-for="Nombre" class="form-control" required />
+            <span asp-validation-for="Nombre" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="Edad" class="form-label"></label>
+            <input asp-for="Edad" type="number" min="0" class="form-control" required />
+            <span asp-validation-for="Edad" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="Tipo" class="form-label"></label>
+            <input asp-for="Tipo" class="form-control" required />
+            <span asp-validation-for="Tipo" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="EstadoAdopcion" class="form-label"></label>
+            <select asp-for="EstadoAdopcion" class="form-select" required>
+                <option value="">-- Selecciona un estado --</option>
+                <option value="Disponible">Disponible</option>
+                <option value="Adoptada">Adoptada</option>
+            </select>
+            <span asp-validation-for="EstadoAdopcion" class="text-danger"></span>
+        </div>
+
+        <div class="col-12 mt-3">
+            <button type="submit" class="btn btn-primary w-100">Registrar Mascota</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
