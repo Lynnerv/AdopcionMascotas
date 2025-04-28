@@ -1,0 +1,36 @@
+@model IEnumerable<AdopcionMascotas.Models.Adoptante>
+
+@{
+    ViewData["Title"] = "Lista de Adoptantes";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4">@ViewData["Title"]</h2>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-warning" role="alert">
+            ⚠️ No hay adoptantes registrados todavía.
+        </div>
+    }
+    else
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Correo Electrónico</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var adoptante in Model)
+                {
+                    <tr>
+                        <td>@adoptante.Nombre</td>
+                        <td>@adoptante.CorreoElectronico</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
