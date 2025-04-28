@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using AdopcionMascotas.Data;
 using AdopcionMascotas.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace AdopcionMascotas.Controllers
 {
